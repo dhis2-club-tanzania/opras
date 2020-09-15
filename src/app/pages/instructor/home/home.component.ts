@@ -8,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   sections = [
     { name: 'SECTION 1', link: '' },
-    { name: 'SECTION 2', link: '' },
-    { name: 'SECTION 3', link: '' },
-    { name: 'SECTION 4', link: '' },
-    { name: 'SECTION 5', link: '' },
-    { name: 'SECTION 6', link: '' },
-    { name: 'SECTION 7', link: '' },
-    { name: 'SECTION 8', link: '' },
+    { name: 'SECTION 2', link: 'section2' },
+    { name: 'SECTION 3', link: 'section3' },
+    { name: 'SECTION 4', link: 'section3' },
+    { name: 'SECTION 5', link: 'section5' },
+    { name: 'SECTION 6', link: 'section6' },
+    { name: 'SECTION 7', link: 'section7' },
+    { name: 'SECTION 8', link: 'section8' },
   ];
   constructor() {}
 
