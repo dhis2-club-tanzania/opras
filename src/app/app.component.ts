@@ -6,9 +6,14 @@ import { Fn } from '@iapps/function-analytics';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  contexts = [
+    { id: 'qjwjsjdhsa', name: 'Instructor' },
+    { id: 'jdjadska', name: 'Head of Department' },
+  ];
+  selectedContext = this.contexts[0].id;
   constructor(
     private translate: TranslateService,
     private titleService: Title
@@ -20,11 +25,11 @@ export class AppComponent {
     this.translate.use('en');
 
     // Set application title
-    this.setTitle('Seed application');
+    this.setTitle('OPRAS');
 
     if (Fn) {
       Fn.init({
-        baseUrl: '../../../'
+        baseUrl: '../../../',
       });
     }
   }

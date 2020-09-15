@@ -1,11 +1,4 @@
-.example-button-row button {
-  margin-right: 5px;
-}
-.example-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.example-container > * {
-  width: 100%;
+.router-link-active {
+  background-color: rgb(39, 102, 150);
+  color: white;
 }

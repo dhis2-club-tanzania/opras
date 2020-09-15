@@ -5,9 +5,9 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/dbe97dbdfbd55344c38f/test_coverage)](https://codeclimate.com/github/hisptz/ngx-seed-app/test_coverage)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![Greenkeeper badge](https://badges.greenkeeper.io/hisptz/ngx-seed-app.svg)](https://greenkeeper.io/)
 
-# Angular DHIS2 based seed app
+# Angular DHIS2 based OPRAS
 
-Boilerplate codes to fast track developing DHIS2 applications based on Angular framework
+Open Performance, Review and Appraisal System built on to of DHIS2 technology based on Angular framework
 
 ## Prerequisites
 
@@ -19,15 +19,7 @@ Boilerplate codes to fast track developing DHIS2 applications based on Angular f
 
 Clone repository
 
-```bash
- git clone https://github.com/hisptz/ngx-seed-app.git
-```
-
 Navigate to application root folder
-
-```bash
-cd ngx-seed-app
-```
 
 Install all required dependencies for the app
 
@@ -48,13 +40,13 @@ This command will require proxy-config.json file available in the root of your s
 ```json
 {
   "/api": {
-    "target": "https://play.dhis2.org/2.29/",
+    "target": "https://play.dhis2.org/2.34.1/",
     "secure": "false",
     "auth": "admin:district",
     "changeOrigin": "true"
   },
   "/": {
-    "target": "https://play.dhis2.org/2.29/",
+    "target": "https://play.dhis2.org/2.34.1/",
     "secure": "false",
     "auth": "admin:district",
     "changeOrigin": "true"
