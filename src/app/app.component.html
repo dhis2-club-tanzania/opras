@@ -3,17 +3,37 @@
   <div class="application-content">
     <nav class="navbar navbar-light bg-light" aria-label="...">
       <ul class="nav pagination">
-        <mat-form-field appearance="fill">
-          <mat-select [(value)]="selectedContext">
-            <mat-option *ngFor="let context of contexts" [value]="context.id">
+        <li class="nav-item page-item brand">
+          <a href="#"><span>OPRAS</span></a>
+        </li>
+        <li class="nav-item page-item">
+          <select
+            id="inputState"
+            class="form-control"
+            (change)="selectContext()"
+            [(ngModel)]="selectedContext"
+          >
+            <option *ngFor="let context of contexts" [value]="context.id">
               {{ context.name }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+            </option>
+          </select>
+        </li>
+        <li class="nav-item page-item">
+          <select
+            id="inputState"
+            class="form-control"
+            (change)="selectPeriod()"
+            [(ngModel)]="selectedPeriod"
+          >
+            <option *ngFor="let period of periods" [value]="period.id">
+              {{ period.name }}
+            </option>
+          </select>
+        </li>
       </ul>
       <button
         class="btn btn-outline-primary my-2 my-sm-0"
-        [routerLink]="['']"
+        [routerLink]="['settings']"
         routerLinkActive="router-link-active"
       >
         Settings <i class="fa fa-cogs"></i>

@@ -5,3 +5,12 @@
   background-color: rgb(39, 102, 150);
   color: white;
 }
+.brand {
+  color: rgb(39, 102, 150);
+  font-size: 30px;
+  letter-spacing: 15px;
+  width: 200px;
+}
+a {
+  text-decoration: none;
+}

@@ -24,6 +24,10 @@ import { effects } from './store/effects';
 import { metaReducers, reducers } from './store/reducers';
 
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { FormsModule } from '@angular/forms';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -31,7 +35,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -79,6 +83,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     // Other Angular Material Modules
     MatSelectModule,
+    MatSnackBarModule,
+    FormsModule,
   ],
   providers: [{ provide: RouterStateSerializer, useClass: RouteSerializer }],
   bootstrap: [AppComponent],
