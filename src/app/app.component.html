@@ -1,6 +1,24 @@
 <div class="application-container">
   <ngx-dhis2-menu></ngx-dhis2-menu>
   <div class="application-content">
+    <nav class="navbar navbar-light bg-light" aria-label="...">
+      <ul class="nav pagination">
+        <mat-form-field appearance="fill">
+          <mat-select [(value)]="selectedContext">
+            <mat-option *ngFor="let context of contexts" [value]="context.id">
+              {{ context.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </ul>
+      <button
+        class="btn btn-outline-primary my-2 my-sm-0"
+        [routerLink]="['']"
+        routerLinkActive="router-link-active"
+      >
+        Settings <i class="fa fa-cogs"></i>
+      </button>
+    </nav>
     <router-outlet></router-outlet>
   </div>
 </div>
