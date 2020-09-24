@@ -6,39 +6,61 @@
         <li class="nav-item page-item brand">
           <a href="#"><span>OPRAS</span></a>
         </li>
-        <li class="nav-item page-item">
-          <select
-            id="inputState"
-            class="form-control"
-            (change)="selectContext()"
-            [(ngModel)]="selectedContext"
-          >
-            <option *ngFor="let context of contexts" [value]="context.id">
-              {{ context.name }}
-            </option>
-          </select>
-        </li>
-        <li class="nav-item page-item">
-          <select
-            id="inputState"
-            class="form-control"
-            (change)="selectPeriod()"
-            [(ngModel)]="selectedPeriod"
-          >
-            <option *ngFor="let period of periods" [value]="period.id">
-              {{ period.name }}
-            </option>
-          </select>
-        </li>
       </ul>
+      <span class="spacer"></span>
       <button
-        class="btn btn-outline-primary my-2 my-sm-0"
-        [routerLink]="['settings']"
-        routerLinkActive="router-link-active"
+        class="btn btn-outline-primary my-2 my-sm-0 profile"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
       >
-        Settings <i class="fa fa-cogs"></i>
+        MM
       </button>
+      <mat-menu #menu="matMenu">
+        Profile Settings
+        <!-- <app-not-found></app-not-found> -->
+      </mat-menu>
     </nav>
-    <router-outlet></router-outlet>
+    <div class="row">
+      <div class="col-3">
+        <mat-tree
+          [dataSource]="dataSource"
+          [treeControl]="treeControl"
+          class="card-header"
+        >
+          <!-- Left nav for sections -->
+          <mat-tree-node
+            *matTreeNodeDef="let node"
+            matTreeNodePadding
+            class="nav-link"
+            [routerLink]="node.link"
+            routerLinkActive="router-link-active"
+          >
+            <!-- <button mat-button>{{node.name|titlecase}}</button> -->
+            <a class="nav-link">{{ node.name | titlecase }}</a>
+          </mat-tree-node>
+          <!-- This is the tree node template for expandable nodes -->
+          <mat-tree-node
+            *matTreeNodeDef="let node; when: hasChild"
+            matTreeNodePadding
+            matTreeNodeToggle
+            [attr.aria-label]="'Toggle ' + node.name"
+          >
+            <div class="nav-link">{{ node.name | titlecase }}</div>
+            <span class="spacer"></span>
+            <button mat-icon-button>
+              <mat-icon class="mat-icon-rtl-mirror">
+                {{
+                  treeControl.isExpanded(node) ? 'expand_more' : 'chevron_left'
+                }}
+              </mat-icon>
+            </button>
+          </mat-tree-node>
+        </mat-tree>
+      </div>
+      <div class="col-9">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
 </div>

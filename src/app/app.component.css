@@ -2,15 +2,34 @@
   margin-top: 50px;
 }
 .router-link-active {
-  background-color: rgb(39, 102, 150);
+  background-color: rgb(149, 149, 149);
+  border: none !important;
   color: white;
 }
 .brand {
-  color: rgb(39, 102, 150);
+  color: rgb(31, 31, 19);
   font-size: 30px;
   letter-spacing: 15px;
   width: 200px;
 }
+.profile {
+  border-radius: 50%;
+  background-color: rgb(149, 149, 149);
+  color: white;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+mat-menu {
+  align-items: center;
+  text-align: center;
+}
+.navbar,
+.navbar-light,
+.bg-light {
+  background-color: rgb(196, 196, 196) !important;
+}
 a {
   text-decoration: none;
+  color: rgb(31, 31, 19);
 }
