@@ -3,17 +3,37 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   {
-    path: '',
+    path: 'dashboard',
     loadChildren: () =>
-      import('./pages/home/home.module').then((m) => m.HomeModule),
+      import('./pages/dashboard/dashboard.module').then(
+        (m) => m.DashboardModule
+      ),
   },
   {
-    path: 'instructor',
+    path: 'planning',
     loadChildren: () =>
-      import('./pages/instructor/instructor.module').then(
-        (m) => m.InstructorModule
+      import('./pages/planning/planning.module').then((m) => m.PlanningModule),
+  },
+  {
+    path: 'objectives-agreement',
+    loadChildren: () =>
+      import('./pages/objective-agreement/objective-agreement.module').then(
+        (m) => m.ObjectiveAgreementModule
       ),
+  },
+  {
+    path: 'performance-review',
+    loadChildren: () =>
+      import('./pages/performance-review/performance-review.module').then(
+        (m) => m.PerformanceReviewModule
+      ),
+  },
+  {
+    path: 'settings',
+    loadChildren: () =>
+      import('./pages/settings/settings.module').then((m) => m.SettingsModule),
   },
   {
     path: '**',
