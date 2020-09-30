@@ -1,1 +1,19 @@
-<p>Planning home works!</p>
+<h3>
+  <button mat-button aria-label="Back">
+    <mat-icon>keyboard_backspace</mat-icon>
+  </button>
+  <span>Plan Objectives</span>
+</h3>
+<div>
+  <mat-tab-group
+    mat-align-tabs="start"
+    (selectedIndexChange)="setGroupState($event)"
+  >
+    <mat-tab *ngFor="let group of groups">
+      <ng-template mat-tab-label>
+        {{ group.name | titlecase }}
+      </ng-template>
+      <app-view-group></app-view-group>
+    </mat-tab>
+  </mat-tab-group>
+</div>

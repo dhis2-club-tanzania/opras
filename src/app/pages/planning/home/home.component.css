@@ -1,0 +1,7 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.create-button {
+  margin-top: 10px;
+  background-color: rgb(149, 149, 149);
+}
