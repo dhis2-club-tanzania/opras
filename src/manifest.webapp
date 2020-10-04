@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.1",
   "name": "OPRAS",
   "description": "Open Performance, Review and Appraisal System",
   "appType": "APP",
@@ -7,7 +7,13 @@
   "icons": {
     "16": "assets/icons/icon-16x16.png",
     "48": "assets/icons/icon-48x48.png",
-    "128": "assets/icons/icon-128x128.png"
+    "72": "assets/icons/icon-72x72.png",
+    "128": "assets/icons/icon-128x128.png",
+    "144": "assets/icons/icon-144x144.png",
+    "152": "assets/icons/icon-152x152.png",
+    "192": "assets/icons/icon-192x192.png",
+    "384": "assets/icons/icon-384x384.png",
+    "512": "assets/icons/icon-512x512.png"
   },
   "developer": {
     "name": "HISPTZ",
