@@ -1,0 +1,12 @@
+*:focus {
+  outline: none !important;
+  border: 0 !important;
+}
+
+mat-form-field {
+  width: 100%;
+}
+mat-card-actions {
+  display: flex;
+  right: 2px;
+}

@@ -1,0 +1,52 @@
+<mat-card>
+  <mat-card-title> Add Agreement </mat-card-title>
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <mat-label>Agreed Performance Target</mat-label>
+        <input
+          matInput
+          placeholder="Prepare and submit assessment plan before the beginning of the semester"
+          [(ngModel)]="agreement.target"
+          [ngModelOptions]="{ standalone: true }"
+          (change)="addAgreementToggle()"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Agreed Perfromance Criteria</mat-label>
+        <input
+          matInput
+          placeholder="Assessment plan prepared"
+          [(ngModel)]="agreement.criteria"
+          [ngModelOptions]="{ standalone: true }"
+          (change)="addAgreementToggle()"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Agreed Resource</mat-label>
+        <input
+          matInput
+          placeholder="Curriculum"
+          [(ngModel)]="agreement.resource"
+          [ngModelOptions]="{ standalone: true }"
+          (change)="addAgreementToggle()"
+        />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="warn" (click)="onCancelClick()">
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      [disabled]="!canAddAgreement"
+      [mat-dialog-close]="agreement"
+    >
+      Add Agreement
+    </button>
+  </mat-card-actions>
+</mat-card>
