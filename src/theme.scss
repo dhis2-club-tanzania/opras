@@ -1,8 +1,31 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-$my-app-primary: mat-palette($mat-blue-grey);
-$my-app-accent: mat-palette($mat-grey, 500, 900, A100);
-$my-app-warn: mat-palette($mat-grey);
+$my-custom-primary-color: (
+  50: rgb(149, 149, 149),
+  100: #4bb543,
+  contrast: (
+    50: #000000,
+    100: #ffffff,
+  ),
+);
+$my-custom-accent-color: (
+  50: rgb(39, 102, 150),
+  contrast: (
+    50: #ffffff,
+  ),
+);
+
+$my-custom-success-color: (
+  50: #4bb543,
+  contrast: (
+    50: #ffffff,
+  ),
+);
+
+$my-app-primary: mat-palette($my-custom-primary-color, 50, 100);
+$my-app-accent: mat-palette($my-custom-accent-color, 50);
+$my-app-warn: mat-palette($mat-red);
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
 @include angular-material-theme($my-app-theme);
