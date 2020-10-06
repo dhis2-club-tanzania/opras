@@ -13,6 +13,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatRippleModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
 
 // Components
 import { HomeComponent } from './home/home.component';
@@ -32,6 +37,10 @@ import { EditGroupComponent } from './pages/edit-group/edit-group.component';
     MatRippleModule,
     MatTabsModule,
     MatTableModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatListModule,
+    MatDividerModule,
   ],
 })
 export class PlanningModule {}
