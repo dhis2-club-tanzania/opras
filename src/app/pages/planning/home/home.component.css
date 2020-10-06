@@ -1,6 +1,10 @@
 .spacer {
   flex: 1 1 auto;
 }
+*:focus {
+  outline: none !important;
+  border: 0 !important;
+}
 .create-button {
   margin-top: 10px;
   background-color: rgb(149, 149, 149);
