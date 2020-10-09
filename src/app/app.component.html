@@ -1,5 +1,4 @@
 <div class="application-container">
-  <ngx-dhis2-menu></ngx-dhis2-menu>
   <div class="application-content">
     <nav class="navbar navbar-light bg-light" aria-label="...">
       <ul class="nav pagination">
@@ -16,10 +15,7 @@
       >
         MM
       </button>
-      <mat-menu #menu="matMenu">
-        Profile Settings
-        <!-- <app-not-found></app-not-found> -->
-      </mat-menu>
+      <mat-menu #menu="matMenu"> Profile Settings </mat-menu>
     </nav>
     <div class="row">
       <div class="col-3">
@@ -36,7 +32,6 @@
             [routerLink]="node.link"
             routerLinkActive="router-link-active"
           >
-            <!-- <button mat-button>{{node.name|titlecase}}</button> -->
             <a class="nav-link">{{ node.name | titlecase }}</a>
           </mat-tree-node>
           <!-- This is the tree node template for expandable nodes -->

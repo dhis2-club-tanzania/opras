@@ -1,5 +1,5 @@
 .application-content {
-  margin-top: 50px;
+  margin-top: 0px;
 }
 .router-link-active {
   background-color: rgb(149, 149, 149);
@@ -32,4 +32,8 @@ mat-menu {
 a {
   text-decoration: none;
   color: rgb(31, 31, 19);
+}
+*:focus {
+  outline: none !important;
+  border: 0 !important;
 }
