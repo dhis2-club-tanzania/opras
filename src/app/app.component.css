@@ -37,3 +37,6 @@ a {
   outline: none !important;
   border: 0 !important;
 }
+mat-tree-node {
+  cursor: pointer;
+}
