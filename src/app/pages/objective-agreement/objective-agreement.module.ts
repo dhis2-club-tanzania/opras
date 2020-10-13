@@ -22,6 +22,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { ViewStaffObjectiveComponent } from './pages/view-staff-objective/view-staff-objective.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { FormsModule } from '@angular/forms';
     MyObjectivesComponent,
     StaffObjectivesComponent,
     AddAgreementComponent,
+    ViewStaffObjectiveComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +49,8 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatInputModule,
     FormsModule,
+    MatSortModule,
+    MatPaginatorModule,
   ],
 })
 export class ObjectiveAgreementModule {}
