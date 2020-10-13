@@ -1,0 +1,26 @@
+*:focus {
+  outline: none !important;
+  border: 0 !important;
+}
+table {
+  width: 100%;
+}
+th.mat-sort-header-sorted {
+  color: black;
+}
+.mat-column-position {
+  width: 15px;
+}
+.mat-column-actions {
+  width: 1px;
+}
+.side-tools {
+  align-items: center;
+}
+.full-width {
+  width: 100%;
+}
+.table-row:hover {
+  background-color: #dfe9f4;
+  color: white;
+}
