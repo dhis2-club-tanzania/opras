@@ -26,21 +26,31 @@ export class MyObjectivesComponent implements OnInit {
   addAgreement(index: number) {
     const dialogRef = this.dialog.open(AddAgreementComponent, {
       width: '60%',
+      disableClose: true,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      if (!this.objectives[index].agreements) {
-        this.objectives[index].agreements=[]
-      }
-      this.objectives[index].agreements.push(result);
-      if(!(result.target,length==0))this._snackBar.open(
-        'New agreement added to ' + this.objectives[index].name + ' objective',
-        'X',
-        {
+      if (result == 'cancel') {
+        this._snackBar.open('Adding agreement dismissed ', 'OK', {
           duration: 3000,
           horizontalPosition: 'left',
+        });
+      } else {
+        if (!this.objectives[index].agreements) {
+          this.objectives[index].agreements = [];
         }
-      );
+        this.objectives[index].agreements.push(result);
+        this._snackBar.open(
+          'New agreement added to ' +
+            this.objectives[index].name +
+            ' objective',
+          'X',
+          {
+            duration: 3000,
+            horizontalPosition: 'left',
+          }
+        );
+      }
     });
   }
 }
