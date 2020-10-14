@@ -6,24 +6,32 @@
         <td class="headers">Objective</td>
         <td (dblclick)="objectiveDobleClick()">{{ objective.name }}</td>
         <td>
-          <div class="nav">
+          <div class="nav" style="min-width: 300px">
             <span class="spacer"></span>
-            <button
-              mat-mini-fab
-              color="warn"
-              *ngIf="objective.applicable"
-              (click)="removeFromPlan(i)"
-            >
-              <mat-icon>delete_sweep</mat-icon>
+            <span style="color: green" *ngIf="objective.applicable">
+              <em>
+                <small> Added to Plan <mat-icon>check</mat-icon> </small>
+              </em>
+            </span>
+            <button mat-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
             </button>
-            <button
-              mat-mini-fab
-              color="accent"
-              *ngIf="!objective.applicable"
-              (click)="addToPlan(i)"
-            >
-              <mat-icon>add_task</mat-icon>
-            </button>
+            <mat-menu #menu="matMenu">
+              <button
+                mat-menu-item
+                [disabled]="!objective.applicable"
+                (click)="removeFromPlan(i)"
+              >
+                <mat-icon>delete_sweep</mat-icon> Remove from plan
+              </button>
+              <button
+                mat-menu-item
+                [disabled]="objective.applicable"
+                (click)="addToPlan(i)"
+              >
+                <mat-icon>add_task</mat-icon> Add to Plan
+              </button>
+            </mat-menu>
           </div>
         </td>
       </tr>
