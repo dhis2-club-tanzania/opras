@@ -5,6 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 
 // data
 import { staff } from './staff';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'view-staff-objective',
   templateUrl: './view-staff-objective.component.html',
@@ -17,7 +19,7 @@ export class ViewStaffObjectiveComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-  constructor() {}
+  constructor(private router: Router, private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.staffList = staff;
@@ -41,5 +43,12 @@ export class ViewStaffObjectiveComponent implements OnInit, AfterViewInit {
         }
       }
     };
+  }
+  viewStaff() {
+    this.router.navigate(['objectives-agreement/staff-objectives/view-staff']);
+    this._snackBar.open('Viewing Someone', 'X', {
+      duration: 3000,
+      horizontalPosition: 'left',
+    });
   }
 }
