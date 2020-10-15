@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Title } from '@angular/platform-browser';
 import { Fn } from '@iapps/function-analytics';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import {
   MatTreeFlatDataSource,
   MatTreeFlattener,
 } from '@angular/material/tree';
+import { MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +18,7 @@ import {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
   panelOpenState = false;
   sections = [
     { name: 'Dashboard', link: 'dashboard' },
@@ -95,5 +96,8 @@ export class AppComponent implements OnInit {
 
   public setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);
+  }
+  openMenu() {
+    this.trigger.openMenu();
   }
 }

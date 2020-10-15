@@ -10,12 +10,37 @@
       <button
         class="btn btn-outline-primary my-2 my-sm-0 profile"
         mat-icon-button
+        (mouseover)="openMenu()"
         [matMenuTriggerFor]="menu"
         aria-label="Example icon-button with a menu"
       >
         MM
       </button>
-      <mat-menu #menu="matMenu"> Profile Settings </mat-menu>
+      <mat-menu #menu="matMenu">
+        <div
+          style="text-align: center; align-items: center; justify-items: center"
+        >
+          <div
+            style="
+              height: 100px;
+              width: 100px;
+              margin-left: 20%;
+              border-radius: 50px;
+              background-color: gray;
+              text-align: center;
+              justify-items: center;
+              color: aliceblue;
+              vertical-align: middle;
+            "
+          >
+            MM
+          </div>
+          <em>appraisee@email.com</em><br />
+          <span>Appraisee Name</span><br />
+          <button mat-button>My Profile</button><br />
+          <button mat-button>Logout</button>
+        </div>
+      </mat-menu>
     </nav>
     <div class="row">
       <div class="col-3">
