@@ -1,0 +1,22 @@
+.spacer {
+  flex: 1 1 auto;
+}
+*:focus {
+  outline: none !important;
+  border: 0 !important;
+}
+mat-accordion {
+  margin-bottom: 10px;
+}
+p {
+  text-align: justify;
+}
+table {
+  width: 100%;
+}
+h6 {
+  color: rgba(0, 0, 0, 0.54);
+}
+button {
+  margin-top: 5px;
+}

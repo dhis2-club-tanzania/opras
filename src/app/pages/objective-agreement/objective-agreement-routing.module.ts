@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from '../not-found/not-found.component';
-import { HomeComponent } from './home/home.component';
 import { MyObjectivesComponent } from './pages/my-objectives/my-objectives.component';
 import { StaffObjectivesComponent } from './pages/staff-objectives/staff-objectives.component';
+import { ViewMyObjectivesComponent } from './pages/view-my-objectives/view-my-objectives.component';
 import { ViewStaffObjectiveComponent } from './pages/view-staff-objective/view-staff-objective.component';
 
 const routes: Routes = [
@@ -18,7 +18,7 @@ const routes: Routes = [
     component: StaffObjectivesComponent,
     children: [
       { path: '', component: ViewStaffObjectiveComponent },
-      { path: 'view-staff', component: MyObjectivesComponent },
+      { path: 'view-staff', component: ViewMyObjectivesComponent },
     ],
   },
   { path: '**', component: NotFoundComponent },
