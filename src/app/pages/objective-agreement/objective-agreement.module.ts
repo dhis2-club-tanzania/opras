@@ -25,6 +25,7 @@ import { FormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ViewStaffObjectiveComponent } from './pages/view-staff-objective/view-staff-objective.component';
+import { ViewMyObjectivesComponent } from './pages/view-my-objectives/view-my-objectives.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ViewStaffObjectiveComponent } from './pages/view-staff-objective/view-s
     StaffObjectivesComponent,
     AddAgreementComponent,
     ViewStaffObjectiveComponent,
+    ViewMyObjectivesComponent,
   ],
   imports: [
     CommonModule,
