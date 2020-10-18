@@ -1,0 +1,14 @@
+h6 {
+  color: rgba(0, 0, 0, 0.54);
+}
+*:focus {
+  outline: none !important;
+  border: 0 !important;
+}
+.full-width {
+  width: 100%;
+}
+.third {
+  width: 30%;
+  margin-right: 2%;
+}

@@ -1,0 +1,65 @@
+<div>
+  <mat-accordion *ngFor="let objective of objectives; let i = index">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ objective.name }}
+        </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <h6>Description</h6>
+      <p>{{ objective.description }}</p>
+      <h6>Progress Made</h6>
+      <form class="example-form">
+        <mat-form-field class="full-width" floatLabel="never">
+          <input matInput placeholder="Progress made" />
+        </mat-form-field>
+      </form>
+      <h6>Rated Marks</h6>
+      <form [formGroup]="formControl">
+        <mat-form-field class="third">
+          <input
+            matInput
+            type="number"
+            formControlName="rateControl"
+            placeholder="My Rate"
+          />
+          <mat-error *ngIf="rateControl.hasError('min')">
+            Minimum rate is <strong>1</strong>
+          </mat-error>
+          <mat-error *ngIf="rateControl.hasError('max')">
+            Maximum rate is <strong>5</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="third">
+          <input
+            matInput
+            type="number"
+            formControlName="rateControl"
+            placeholder="Supervisor's Mark"
+          />
+          <mat-error *ngIf="rateControl.hasError('min')">
+            Minimum rate is <strong>1</strong>
+          </mat-error>
+          <mat-error *ngIf="rateControl.hasError('max')">
+            Maximu rate is <strong>5</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="third">
+          <input
+            matInput
+            type="number"
+            formControlName="rateControl"
+            placeholder="Agreed Mark"
+          />
+          <mat-error *ngIf="rateControl.hasError('min')">
+            Minimum rate is <strong>1</strong>
+          </mat-error>
+          <mat-error *ngIf="rateControl.hasError('max')">
+            Maximu rate is <strong>5</strong>
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
