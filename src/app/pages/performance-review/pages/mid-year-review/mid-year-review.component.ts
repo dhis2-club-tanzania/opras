@@ -1,15 +1,54 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { teachingStaffObjectives } from 'src/app/pages/planning/pages/view-group/objectives';
+import { AddReviewComponent } from '../add-review/add-review.component';
 
 @Component({
-  selector: 'app-mid-year-review',
+  selector: 'mid-year-review',
   templateUrl: './mid-year-review.component.html',
-  styleUrls: ['./mid-year-review.component.css']
+  styleUrls: ['./mid-year-review.component.css'],
 })
 export class MidYearReviewComponent implements OnInit {
-
-  constructor() { }
+  objectives;
+  displayedColumns = [
+    'sno',
+    'progress-towards-target',
+    'factor-affecting-performance',
+  ];
+  constructor(private _snackBar: MatSnackBar, public dialog: MatDialog) {}
 
   ngOnInit(): void {
+    this.objectives = teachingStaffObjectives;
   }
+  addAgreement(index: number) {
+    const dialogRef = this.dialog.open(AddReviewComponent, {
+      width: '60%',
+      disableClose: true,
+    });
 
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result == 'cancel') {
+        this._snackBar.open('Adding agreement dismissed ', 'OK', {
+          duration: 3000,
+          horizontalPosition: 'left',
+        });
+      } else {
+        if (!this.objectives[index].agreements) {
+          this.objectives[index].agreements = [];
+        }
+        this.objectives[index].agreements.push(result);
+        this._snackBar.open(
+          'New agreement added to ' +
+            this.objectives[index].name +
+            ' objective',
+          'X',
+          {
+            duration: 3000,
+            horizontalPosition: 'left',
+          }
+        );
+      }
+    });
+  }
 }
