@@ -1,1 +1,41 @@
-<p>add-review works!</p>
+<mat-card>
+  <mat-card-title> Add Review </mat-card-title>
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <mat-label>Performance Towards Target</mat-label>
+        <input
+          matInput
+          placeholder="Prepare and submit assessment plan before the beginning of the semester"
+          [(ngModel)]="review.ptt"
+          [ngModelOptions]="{ standalone: true }"
+          (change)="addReviewToggle()"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Factors Affecting Performance</mat-label>
+        <input
+          matInput
+          placeholder="Assessment plan prepared"
+          [(ngModel)]="review.fap"
+          [ngModelOptions]="{ standalone: true }"
+          (change)="addReviewToggle()"
+        />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="warn" (click)="onCancelClick()">
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      [disabled]="!canReview"
+      [mat-dialog-close]="review"
+    >
+      Add Review
+    </button>
+  </mat-card-actions>
+</mat-card>
