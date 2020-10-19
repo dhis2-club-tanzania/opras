@@ -29,19 +29,17 @@ export class MidYearReviewComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result == 'cancel') {
-        this._snackBar.open('Adding agreement dismissed ', 'OK', {
+        this._snackBar.open('Adding Review dismissed ', 'OK', {
           duration: 3000,
           horizontalPosition: 'left',
         });
       } else {
-        if (!this.objectives[index].agreements) {
-          this.objectives[index].agreements = [];
+        if (!this.objectives[index].review) {
+          this.objectives[index].review = [];
         }
-        this.objectives[index].agreements.push(result);
+        this.objectives[index].review.push(result);
         this._snackBar.open(
-          'New agreement added to ' +
-            this.objectives[index].name +
-            ' objective',
+          'New review added to ' + this.objectives[index].name + ' objective',
           'X',
           {
             duration: 3000,

@@ -12,9 +12,9 @@
       <!-- Agreements -->
       <table
         mat-table
-        [dataSource]="objective.agreements"
+        [dataSource]="objective.review"
         class="mat-elevation-z2"
-        *ngIf="objective.agreements"
+        *ngIf="objective.review"
       >
         <!-- S/No Column -->
         <ng-container matColumnDef="sno">
@@ -25,7 +25,7 @@
         <!-- Progress Towards Target-->
         <ng-container matColumnDef="progress-towards-target">
           <th mat-header-cell *matHeaderCellDef>Progress Towards Target</th>
-          <td mat-cell *matCellDef="let element">{{ element.target }}</td>
+          <td mat-cell *matCellDef="let element">{{ element.ptt }}</td>
         </ng-container>
 
         <!-- Factors affecting performance -->
@@ -34,7 +34,7 @@
             Factors Affecting Performance
           </th>
           <td mat-cell *matCellDef="let element">
-            {{ element.criteria }}
+            {{ element.fap }}
           </td>
         </ng-container>
 
