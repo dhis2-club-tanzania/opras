@@ -20,6 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
+import { ViewStaffReviewComponent } from './pages/view-staff-review/view-staff-review.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MatSliderModule } from '@angular/material/slider';
     MidYearReviewComponent,
     AddReviewComponent,
     AnnualReviewComponent,
+    ViewStaffReviewComponent,
   ],
   imports: [
     CommonModule,
