@@ -8,6 +8,7 @@ import { StaffReviewComponent } from './pages/staff-review/staff-review.componen
 import { MidYearReviewComponent } from './pages/mid-year-review/mid-year-review.component';
 import { AddReviewComponent } from './pages/add-review/add-review.component';
 import { AnnualReviewComponent } from './pages/annual-review/annual-review.component';
+import { ViewStaffReviewComponent } from './pages/view-staff-review/view-staff-review.component';
 
 // Material Imports
 import { MatTabsModule } from '@angular/material/tabs';
@@ -19,8 +20,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatSliderModule } from '@angular/material/slider';
-import { ViewStaffReviewComponent } from './pages/view-staff-review/view-staff-review.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ViewStaffReviewComponent } from './pages/view-staff-review/view-staff-r
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatSliderModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
 })
 export class PerformanceReviewModule {}

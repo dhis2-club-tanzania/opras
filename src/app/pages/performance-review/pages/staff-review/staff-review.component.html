@@ -6,3 +6,15 @@
     <span>Staff Review</span>
   </h4>
 </div>
+<div>
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label> Mid Year Review </ng-template>
+      <router-outlet></router-outlet>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>Annual Review </ng-template>
+      <annual-review></annual-review>
+    </mat-tab>
+  </mat-tab-group>
+</div>
