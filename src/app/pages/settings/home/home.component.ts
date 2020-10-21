@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   tabs = [
-    { name: 'General Settings', link: 'general' },
-    { name: 'Profile Settings', link: 'profile' },
+    { name: 'General Settings', link: '/settings/general', icon: 'settings' },
+    { name: 'My Profile', link: '/settings/profile', icon: 'person' },
+    { name: 'About OPRAS', link: '/settings/about', icon: 'info' },
   ];
 
   constructor() {}

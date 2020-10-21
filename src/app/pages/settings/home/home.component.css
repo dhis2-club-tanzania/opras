@@ -1,21 +1,16 @@
 .router-link-active {
-  background-color: rgb(39, 102, 150);
+  background-color: rgb(149, 149, 149);
   color: white;
-  border-radius: 5px;
 }
-.nav-item {
-  margin-bottom: 3px;
-  border-radius: 5px;
-  border-bottom: rgb(39, 102, 150) 2px solid;
-  border-right: rgb(39, 102, 150) 2px solid;
-  border-top: rgb(39, 102, 150) 1px solid;
-  border-left: rgb(39, 102, 150) 1px solid;
+button {
   width: 100%;
+  text-align: left;
 }
-.nav-item:hover {
-  background-color: rgb(39, 102, 150);
-  color: white;
+*:focus {
+  outline: none !important;
+  border: 0 !important;
 }
-.nav-link:hover {
+.tabs:hover {
+  background-color: rgb(149, 149, 149);
   color: white;
 }

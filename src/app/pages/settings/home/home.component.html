@@ -1,17 +1,19 @@
 <div class="row">
-  <div class="card-header col-2">
-    <ul class="nav flex-column" *ngFor="let tab of tabs">
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          [routerLink]="tab.link"
-          routerLinkActive="router-link-active"
-          >{{ tab.name | titlecase }}</a
-        >
-      </li>
-    </ul>
+  <div class="card-header col-3">
+    <button mat-button routerLink="/dashboard">
+      <mat-icon>keyboard_backspace</mat-icon> Back to Dashboard
+    </button>
+    <button
+      mat-button
+      *ngFor="let tab of tabs; let i = index"
+      [routerLink]="tab.link"
+      class="tabs"
+      routerLinkActive="router-link-active"
+    >
+      <mat-icon>{{ tab.icon }}</mat-icon> {{ tab.name }}
+    </button>
   </div>
-  <div class="col-10">
+  <div class="col-9">
     <router-outlet></router-outlet>
   </div>
 </div>
