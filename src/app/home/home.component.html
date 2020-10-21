@@ -1,1 +1,38 @@
-<p>home works!</p>
+<div class="row">
+  <div class="col-3">
+    <mat-tree
+      [dataSource]="dataSource"
+      [treeControl]="treeControl"
+      class="card-header"
+    >
+      <!-- Left nav for sections -->
+      <mat-tree-node
+        *matTreeNodeDef="let node"
+        matTreeNodePadding
+        class="nav-link"
+        [routerLink]="node.link"
+        routerLinkActive="router-link-active"
+      >
+        <a class="nav-link">{{ node.name | titlecase }}</a>
+      </mat-tree-node>
+      <!-- This is the tree node template for expandable nodes -->
+      <mat-tree-node
+        *matTreeNodeDef="let node; when: hasChild"
+        matTreeNodePadding
+        matTreeNodeToggle
+        [attr.aria-label]="'Toggle ' + node.name"
+      >
+        <div class="nav-link">{{ node.name | titlecase }}</div>
+        <span class="spacer"></span>
+        <button mat-icon-button>
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_left' }}
+          </mat-icon>
+        </button>
+      </mat-tree-node>
+    </mat-tree>
+  </div>
+  <div class="col-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>

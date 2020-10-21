@@ -18,7 +18,13 @@
       </button>
       <mat-menu #menu="matMenu">
         <div
-          style="text-align: center; align-items: center; justify-items: center"
+          style="
+            text-align: center;
+            align-items: center;
+            justify-items: center;
+            padding-left: 30px;
+            padding-right: 30px;
+          "
         >
           <div
             style="
@@ -31,56 +37,21 @@
               justify-items: center;
               color: aliceblue;
               vertical-align: middle;
+              background-image: url(assets/opras-logo.png);
+              background-position: center;
             "
-          >
-            MM
-          </div>
+          ></div>
           <em>appraisee@email.com</em><br />
           <span>Appraisee Name</span><br />
-          <button mat-button>My Profile</button><br />
-          <button mat-button>Logout</button>
+          <button mat-button [routerLink]="['settings']" style="width: 100%">
+            My Profile</button
+          ><br />
+          <button mat-button style="width: 100%">Logout</button>
         </div>
       </mat-menu>
     </nav>
-    <div class="row">
-      <div class="col-3">
-        <mat-tree
-          [dataSource]="dataSource"
-          [treeControl]="treeControl"
-          class="card-header"
-        >
-          <!-- Left nav for sections -->
-          <mat-tree-node
-            *matTreeNodeDef="let node"
-            matTreeNodePadding
-            class="nav-link"
-            [routerLink]="node.link"
-            routerLinkActive="router-link-active"
-          >
-            <a class="nav-link">{{ node.name | titlecase }}</a>
-          </mat-tree-node>
-          <!-- This is the tree node template for expandable nodes -->
-          <mat-tree-node
-            *matTreeNodeDef="let node; when: hasChild"
-            matTreeNodePadding
-            matTreeNodeToggle
-            [attr.aria-label]="'Toggle ' + node.name"
-          >
-            <div class="nav-link">{{ node.name | titlecase }}</div>
-            <span class="spacer"></span>
-            <button mat-icon-button>
-              <mat-icon class="mat-icon-rtl-mirror">
-                {{
-                  treeControl.isExpanded(node) ? 'expand_more' : 'chevron_left'
-                }}
-              </mat-icon>
-            </button>
-          </mat-tree-node>
-        </mat-tree>
-      </div>
-      <div class="col-9">
-        <router-outlet></router-outlet>
-      </div>
+    <div>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
