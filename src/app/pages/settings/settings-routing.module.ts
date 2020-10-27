@@ -11,7 +11,7 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
-      { path: '', redirectTo: '/settings/general', pathMatch: 'full' },
+      { path: '', redirectTo: '/settings/profile', pathMatch: 'full' },
       {
         path: 'settings/general',
         component: GeneralComponent,
