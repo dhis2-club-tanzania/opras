@@ -8,8 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   tabs = [
-    { name: 'General Settings', link: '/settings/general', icon: 'settings' },
     { name: 'My Profile', link: '/settings/profile', icon: 'person' },
+    { name: 'General Settings', link: '/settings/general', icon: 'settings' },
     { name: 'About OPRAS', link: '/settings/about', icon: 'info' },
   ];
 
