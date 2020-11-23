@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-title> Add New Objective </mat-card-title>
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input
+          matInput
+          placeholder="Teaching"
+          [(ngModel)]="objective.name"
+          [ngModelOptions]="{ standalone: true }"
+          (change)="addObjectiveToggle()"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input
+          matInput
+          placeholder="To impact [module name] knowledge, skills and competencies to students of level [Level of study] for the fifteen weeks of the first semester of [Academic year]."
+          [(ngModel)]="objective.description"
+          [ngModelOptions]="{ standalone: true }"
+          (change)="addObjectiveToggle()"
+        />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="warn" (click)="onCancelClick()">
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      [disabled]="!canAddObjective"
+      [mat-dialog-close]="objective"
+    >
+      Add Objective
+    </button>
+  </mat-card-actions>
+</mat-card>

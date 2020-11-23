@@ -17,14 +17,23 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 // Components
 import { HomeComponent } from './home/home.component';
 import { ViewGroupComponent } from './pages/view-group/view-group.component';
 import { EditGroupComponent } from './pages/edit-group/edit-group.component';
+import { AddNewObjectiveComponent } from './pages/add-new-objective/add-new-objective.component';
 
 @NgModule({
-  declarations: [HomeComponent, ViewGroupComponent, EditGroupComponent],
+  declarations: [
+    HomeComponent,
+    ViewGroupComponent,
+    EditGroupComponent,
+    AddNewObjectiveComponent,
+  ],
   imports: [
     CommonModule,
     PlanningRoutingModule,
@@ -40,6 +49,10 @@ import { EditGroupComponent } from './pages/edit-group/edit-group.component';
     MatInputModule,
     MatListModule,
     MatDividerModule,
+    MatDialogModule,
+    MatInputModule,
+    FormsModule,
+    MatFormFieldModule,
   ],
 })
 export class PlanningModule {}
