@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Objective } from 'src/app/pages/planning/shared/objective';
 
 import { teachingStaffObjectives } from '../../../planning/pages/view-group/objectives';
 import { AddAgreementComponent } from '../add-agreement/add-agreement.component';
@@ -11,7 +12,7 @@ import { AddAgreementComponent } from '../add-agreement/add-agreement.component'
   styleUrls: ['./my-objectives.component.css'],
 })
 export class MyObjectivesComponent implements OnInit {
-  objectives;
+  objectives: Objective[];
   displayedColumns = [
     'sno',
     'agreed-performance-targets',
