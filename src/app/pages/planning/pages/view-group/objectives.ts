@@ -1,18 +1,20 @@
-export const teachingStaffObjectives = [
+import { Objective } from '../../shared/objective';
+
+export const teachingStaffObjectives: Objective[] = [
   {
     name: 'Teaching',
     description:
       'To impact [module name] knowledge, skills and competencies to students of level [Level of study] for the fifteen weeks of the first semester of [Academic year].',
     agreements: [
       {
-        target:
+        performanceTarget:
           'Prepare and submit assessment plan before the beginning of the semester',
-        criteria: 'Assessment plan prepared',
+        perfromanceCriteria: 'Assessment plan prepared',
         resource: 'Curriculum',
       },
       {
-        target: 'Prepare teaching materials in time',
-        criteria: 'Teaching materials prepared',
+        performanceTarget: 'Prepare teaching materials in time',
+        perfromanceCriteria: 'Teaching materials prepared',
       },
     ],
     lastModified: new Date('2020-06-15'),
@@ -55,7 +57,7 @@ export const teachingStaffObjectives = [
     applicable: false,
   },
 ];
-export const administrativeStaffObjectives = [
+export const administrativeStaffObjectives: Objective[] = [
   {
     name: 'Reduce HIV/AIDS infections',
     lastModified: new Date('2020-06-15'),
