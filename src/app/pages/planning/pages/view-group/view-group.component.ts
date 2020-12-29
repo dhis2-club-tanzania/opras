@@ -61,6 +61,7 @@ export class ViewGroupComponent implements OnInit {
     const dialogRef = this.dialog.open(AddNewObjectiveComponent, {
       width: '60%',
       disableClose: true,
+      data: { title: 'Add New Objective', objective: {} },
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result == 'cancel') {
@@ -102,10 +103,41 @@ export class ViewGroupComponent implements OnInit {
     );
     this.addOrRemoveAll();
   }
-  objectiveDobleClick() {
-    this._snackBar.open('Umedouble_click Objective yangu...', 'X', {
-      duration: 3000,
-      horizontalPosition: 'left',
+  objectiveDobleClick(index: number) {
+    this.editObjective(index);
+  }
+
+  editObjective(index: number) {
+    const dialogRef = this.dialog.open(AddNewObjectiveComponent, {
+      width: '60%',
+      disableClose: true,
+      data: {
+        title: 'Edit ' + this.dataSource[index].name + ' Objective',
+        objective: this.dataSource[index],
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result == 'cancel') {
+        this._snackBar.open(
+          'Editing ' + this.dataSource[index].name + ' dismissed ',
+          'OK',
+          {
+            duration: 3000,
+            horizontalPosition: 'left',
+          }
+        );
+      } else {
+        this.dataSource[index].name = result.name;
+        this.dataSource[index].description = result.description;
+        this._snackBar.open(
+          this.dataSource[index].name + ' objective edited successfully ',
+          'OK',
+          {
+            duration: 3000,
+            horizontalPosition: 'left',
+          }
+        );
+      }
     });
   }
 }

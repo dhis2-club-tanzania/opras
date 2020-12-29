@@ -4,7 +4,7 @@
     <table>
       <tr>
         <td class="headers">Objective</td>
-        <td (dblclick)="objectiveDobleClick()">{{ objective.name }}</td>
+        <td (dblclick)="objectiveDobleClick(i)">{{ objective.name }}</td>
         <td>
           <div class="nav" style="min-width: 300px">
             <span class="spacer"></span>
@@ -31,13 +31,16 @@
               >
                 <mat-icon>add_task</mat-icon> Add to Plan
               </button>
+              <button mat-menu-item (click)="editObjective(i)">
+                <mat-icon>create</mat-icon> Edit Objective
+              </button>
             </mat-menu>
           </div>
         </td>
       </tr>
       <tr>
         <td class="headers">Description</td>
-        <td colspan="2" width="99%" (dblclick)="objectiveDobleClick()">
+        <td colspan="2" width="99%" (dblclick)="objectiveDobleClick(i)">
           {{ objective.description }}
         </td>
       </tr>
