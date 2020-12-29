@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatTableDataSource } from '@angular/material/table';
+import { Objective } from '../../shared/objective';
+import { AddNewObjectiveComponent } from '../add-new-objective/add-new-objective.component';
 
 import {
   teachingStaffObjectives,
@@ -14,18 +16,10 @@ import {
 })
 export class ViewGroupComponent implements OnInit {
   @Input() groupState: number;
-
-  displayedColumns: string[] = [
-    'sno',
-    'objective',
-    'last-modified',
-    'applicable',
-    'actions',
-  ];
-  dataSource;
+  dataSource: Objective[];
   canAddAll: Boolean;
   canRemoveAll: Boolean;
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(private _snackBar: MatSnackBar, public dialog: MatDialog) {}
 
   ngOnInit(): void {}
   ngOnChanges(): void {
@@ -64,9 +58,23 @@ export class ViewGroupComponent implements OnInit {
     this.addOrRemoveAll();
   }
   onAddNew() {
-    this._snackBar.open('You cannot add new objective at a moment', 'X', {
-      duration: 3000,
-      horizontalPosition: 'left',
+    const dialogRef = this.dialog.open(AddNewObjectiveComponent, {
+      width: '60%',
+      disableClose: true,
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result == 'cancel') {
+        this._snackBar.open('Adding objective dismissed ', 'OK', {
+          duration: 3000,
+          horizontalPosition: 'left',
+        });
+      } else {
+        this.dataSource.push(result);
+        this._snackBar.open('New Objective Added Successfully ', 'OK', {
+          duration: 3000,
+          horizontalPosition: 'left',
+        });
+      }
     });
     this.addOrRemoveAll();
   }
