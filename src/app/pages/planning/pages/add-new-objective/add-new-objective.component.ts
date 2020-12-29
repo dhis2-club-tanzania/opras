@@ -13,7 +13,9 @@ export class AddNewObjectiveComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<AddNewObjectiveComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
+  ) {
+    this.objective = data.objective;
+  }
 
   ngOnInit(): void {}
   onCancelClick(): void {
