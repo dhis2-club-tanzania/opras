@@ -34,3 +34,6 @@ table {
   -ms-user-select: none;
   user-select: none;
 }
+button.mat-menu-item {
+  width: 98%;
+}
