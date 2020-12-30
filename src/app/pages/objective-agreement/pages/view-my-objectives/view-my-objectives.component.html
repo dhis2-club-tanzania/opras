@@ -25,14 +25,16 @@
         <!-- Agreed Performance Targets-->
         <ng-container matColumnDef="agreed-performance-targets">
           <th mat-header-cell *matHeaderCellDef>Agreed Performance Targets</th>
-          <td mat-cell *matCellDef="let element">{{ element.target }}</td>
+          <td mat-cell *matCellDef="let element">
+            {{ element.performanceTarget }}
+          </td>
         </ng-container>
 
         <!-- Agreed Performance Criteria -->
         <ng-container matColumnDef="agreed-perfromance-criteria">
           <th mat-header-cell *matHeaderCellDef>Agreed Performance Criteria</th>
           <td mat-cell *matCellDef="let element">
-            {{ element.criteria }}
+            {{ element.performanceCriteria }}
           </td>
         </ng-container>
 

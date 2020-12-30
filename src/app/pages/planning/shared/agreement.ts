@@ -1,6 +1,6 @@
 export interface Agreement {
   id?: string;
   performanceTarget?: string;
-  perfromanceCriteria: string;
+  performanceCriteria: string;
   resource?: string;
 }

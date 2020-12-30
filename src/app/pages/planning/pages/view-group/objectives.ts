@@ -9,12 +9,12 @@ export const teachingStaffObjectives: Objective[] = [
       {
         performanceTarget:
           'Prepare and submit assessment plan before the beginning of the semester',
-        perfromanceCriteria: 'Assessment plan prepared',
+        performanceCriteria: 'Assessment plan prepared',
         resource: 'Curriculum',
       },
       {
         performanceTarget: 'Prepare teaching materials in time',
-        perfromanceCriteria: 'Teaching materials prepared',
+        performanceCriteria: 'Teaching materials prepared',
       },
     ],
     lastModified: new Date('2020-06-15'),
