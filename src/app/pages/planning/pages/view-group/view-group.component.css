@@ -21,11 +21,6 @@ button {
   bottom: 5px !important;
   right: 10px;
 }
-.button-add-all,
-.button-remove-all,
-.button-add-new-objective {
-  border-radius: 50px;
-}
 table {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
