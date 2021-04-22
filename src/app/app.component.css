@@ -39,3 +39,7 @@ a {
   outline: none !important;
   border: 0 !important;
 }
+.router-link-active {
+  background-color: rgb(39, 102, 150);
+  color: white;
+}
