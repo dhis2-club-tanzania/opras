@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 declare var particlesJS: any;
 
 @Component({
@@ -7,9 +8,10 @@ declare var particlesJS: any;
   styleUrls: ['./not-found.component.css'],
 })
 export class NotFoundComponent implements OnInit {
-  constructor() {}
+  constructor(private _title: Title) {}
 
   ngOnInit(): void {
+    this._title.setTitle('OPRAS Error');
     particlesJS.load('particles-js', '/assets/particles.json', null);
   }
 }

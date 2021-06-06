@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Title } from '@angular/platform-browser';
 import { Objective } from 'src/app/pages/planning/shared/objective';
 
 import { teachingStaffObjectives } from '../../../planning/pages/view-group/objectives';
@@ -19,9 +20,14 @@ export class MyObjectivesComponent implements OnInit {
     'agreed-perfromance-criteria',
     'agreed-resources',
   ];
-  constructor(private _snackBar: MatSnackBar, public dialog: MatDialog) {}
+  constructor(
+    private _title: Title,
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
+    this._title.setTitle('OPRAS - My Objectives');
     this.objectives = teachingStaffObjectives;
   }
   addAgreement(index: number) {

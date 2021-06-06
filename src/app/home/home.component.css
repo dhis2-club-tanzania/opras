@@ -11,3 +11,15 @@ mat-tree-node {
   outline: none !important;
   border: 0 !important;
 }
+a {
+  color: rgba(0, 0, 0, 0.87);
+}
+.sidenav-toggler {
+  background-color: rgb(149, 149, 149);
+  z-index: 9000 !important;
+  position: absolute !important;
+  inset: 40% -12px -8px -8px;
+}
+mat-drawer-container {
+  height: 100%;
+}

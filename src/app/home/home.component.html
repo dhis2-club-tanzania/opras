@@ -1,5 +1,9 @@
-<div class="row">
-  <div class="col-3">
+<mat-drawer-container autosize>
+  <mat-drawer
+    #sidenav
+    [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [opened]="!mobileQuery.matches"
+  >
     <mat-tree
       [dataSource]="dataSource"
       [treeControl]="treeControl"
@@ -31,8 +35,13 @@
         </button>
       </mat-tree-node>
     </mat-tree>
-  </div>
-  <div class="col-9">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <button mat-mini-fab class="sidenav-toggler" (click)="sidenav.toggle()">
+      <mat-icon>
+        {{ sidenav._opened ? 'chevron_left' : 'chevron_right' }}
+      </mat-icon>
+    </button>
+    <router-outlet></router-outlet
+  ></mat-drawer-content>
+</mat-drawer-container>

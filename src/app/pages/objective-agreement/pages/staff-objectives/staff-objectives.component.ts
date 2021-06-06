@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-staff-objectives',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./staff-objectives.component.css'],
 })
 export class StaffObjectivesComponent implements OnInit {
-  constructor() {}
+  constructor(private _title: Title) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._title.setTitle('OPRAS - Staff Objectives');
+  }
 }

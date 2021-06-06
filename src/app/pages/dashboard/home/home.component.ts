@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,9 @@ export class HomeComponent implements OnInit {
       link: 'section8',
     },
   ];
-  constructor() {}
+  constructor(private _title: Title) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._title.setTitle('OPRAS - Dashboard');
+  }
 }
