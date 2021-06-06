@@ -1,7 +1,7 @@
-<mat-drawer-container autosize>
+<mat-drawer-container fullscreen>
   <mat-drawer
     #sidenav
-    [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [mode]="mobileQuery.matches ? 'push' : 'side'"
     [opened]="!mobileQuery.matches"
   >
     <mat-tree
@@ -35,9 +35,26 @@
         </button>
       </mat-tree-node>
     </mat-tree>
+    <button
+      mat-mini-fab
+      *ngIf="sidenav._opened"
+      class="sidenav-toggler"
+      style="right: -16px"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon>
+        {{ sidenav._opened ? 'chevron_left' : 'chevron_right' }}
+      </mat-icon>
+    </button>
   </mat-drawer>
   <mat-drawer-content>
-    <button mat-mini-fab class="sidenav-toggler" (click)="sidenav.toggle()">
+    <button
+      mat-mini-fab
+      *ngIf="!sidenav._opened"
+      style="left: -16px"
+      class="sidenav-toggler"
+      (click)="sidenav.toggle()"
+    >
       <mat-icon>
         {{ sidenav._opened ? 'chevron_left' : 'chevron_right' }}
       </mat-icon>

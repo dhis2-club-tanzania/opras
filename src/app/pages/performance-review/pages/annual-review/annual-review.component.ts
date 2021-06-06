@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { teachingStaffObjectives } from 'src/app/pages/planning/pages/view-group/objectives';
+import {
+  teachingStaffObjectives,
+  attributes,
+} from 'src/app/pages/planning/pages/view-group/objectives';
 
 @Component({
   selector: 'annual-review',
@@ -9,6 +12,7 @@ import { teachingStaffObjectives } from 'src/app/pages/planning/pages/view-group
 })
 export class AnnualReviewComponent implements OnInit {
   objectives;
+  attributes;
   rateControl;
   formControl;
 
@@ -16,6 +20,7 @@ export class AnnualReviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.objectives = teachingStaffObjectives;
+    this.attributes = attributes;
     this.rateControl = new FormControl('', [
       Validators.min(1),
       Validators.max(5),

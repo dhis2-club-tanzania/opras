@@ -69,14 +69,12 @@ export const administrativeStaffObjectives: Objective[] = [
     applicable: false,
   },
   {
-    name:
-      'Change in the level staff’s satisfaction with services satisfaction provided by the Management',
+    name: 'Change in the level staff’s satisfaction with services satisfaction provided by the Management',
     lastModified: new Date('2020-07-19'),
     applicable: true,
   },
   {
-    name:
-      "Increase level of Stakeholders' satisfication with University Operations",
+    name: "Increase level of Stakeholders' satisfication with University Operations",
     lastModified: new Date('2020-07-10'),
     applicable: false,
   },
@@ -99,5 +97,79 @@ export const administrativeStaffObjectives: Objective[] = [
     name: 'Training policy in place',
     lastModified: new Date('2020-07-10'),
     applicable: true,
+  },
+];
+export const attributes: any[] = [
+  {
+    name: 'WORKING RELATIONSHIPS',
+    quality_attributes: [
+      { name: 'Ability to work in team' },
+      { name: 'Ability to get on with other staff' },
+      { name: 'Ability to gain respect from others' },
+    ],
+  },
+  {
+    name: 'COMMUNICATION AND LISTENING',
+    quality_attributes: [
+      { name: 'Ability to express in writing' },
+      { name: 'Ability to express orally' },
+      { name: 'Ability to listen and comprehend' },
+      { name: 'Ability to train and develop subordinates ' },
+    ],
+  },
+  {
+    name: 'MANAGEMENT AND LEADERSHIP',
+    quality_attributes: [
+      { name: 'Ability to plan and organize' },
+      { name: 'Ability to lead, motivate and resolve conflicts' },
+      { name: 'Ability to initiate and innovate' },
+    ],
+  },
+  {
+    name: 'PERFOMANCE IN TERMS OF QUALITY',
+    quality_attributes: [
+      { name: 'Ability to deliver accurate and high quality output timely' },
+      { name: 'Ability for resilience and persistence' },
+    ],
+  },
+  {
+    name: ' PERFORMANCE IN TERMS OF QUANTITY',
+    quality_attributes: [
+      { name: 'Ability to meet demand' },
+      { name: 'Ability to handle extra work' },
+    ],
+  },
+  {
+    name: 'RESPONSIBILITY AND JUDGEMENT',
+    quality_attributes: [
+      { name: 'Ability to accept and fulfil responsibility' },
+      { name: 'Ability to make right decisions' },
+    ],
+  },
+  {
+    name: 'CUSTOMER FOCUS',
+    quality_attributes: [{ name: 'Ability to respond well to the customer' }],
+  },
+  {
+    name: 'LOYALTY',
+    quality_attributes: [
+      { name: 'Ability to demonstrate follower ship skills ' },
+      { name: 'Ability to provide ongoing support to supervisor(s)' },
+      { name: 'Ability to comply with lawful instructions of supervisors' },
+    ],
+  },
+  {
+    name: 'INTEGRITY',
+    quality_attributes: [
+      {
+        name: 'Ability to devote working time exclusively to work related duties',
+      },
+      {
+        name: 'Ability to provide quality services without need for any inducements',
+      },
+      {
+        name: 'Ability to apply knowledge abilities to benefit Government and not for personal gains',
+      },
+    ],
   },
 ];
