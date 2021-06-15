@@ -7,18 +7,19 @@ import { GeneralComponent } from './pages/general/general.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'account', pathMatch: 'full' },
   {
-    path: '',
+    path: 'account',
     component: HomeComponent,
     children: [
-      { path: '', redirectTo: '/settings/profile', pathMatch: 'full' },
+      { path: '', redirectTo: 'profile', pathMatch: 'full' },
       {
-        path: 'settings/general',
+        path: 'general',
         component: GeneralComponent,
       },
-      { path: 'settings/profile', component: ProfileComponent },
-      { path: 'settings/about', component: AboutComponent },
-      { path: '**', component: ProfileComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'about', component: AboutComponent },
+      { path: '**', component: NotFoundComponent },
     ],
   },
   { path: '**', component: NotFoundComponent },

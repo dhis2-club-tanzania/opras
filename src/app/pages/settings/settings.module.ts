@@ -13,6 +13,8 @@ import { SettingsRoutingModule } from './settings-routing.module';
 import { GeneralComponent } from './pages/general/general.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AboutComponent } from './pages/about/about.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,10 +26,12 @@ import { AboutComponent } from './pages/about/about.component';
   imports: [
     CommonModule,
     SettingsRoutingModule,
+    FormsModule,
     MatButtonModule,
     MatIconModule,
     MatInputModule,
     MatSelectModule,
+    MatSidenavModule,
   ],
 })
 export class SettingsModule {}

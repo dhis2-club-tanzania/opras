@@ -12,7 +12,6 @@ import {
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  panelOpenState = false;
   mobileQuery: MediaQueryList;
   sections = [
     { name: 'Dashboard', link: '/dashboard' },

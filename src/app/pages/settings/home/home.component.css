@@ -2,9 +2,16 @@
   background-color: rgb(149, 149, 149);
   color: white;
 }
-button {
+.outlet {
+  padding: 5px 10px;
+}
+.sidenav {
+  margin: 0px 10px !important;
+}
+.sidenav button {
   width: 100%;
   text-align: left;
+  height: 60px;
 }
 *:focus {
   outline: none !important;
@@ -13,4 +20,22 @@ button {
 .tabs:hover {
   background-color: rgb(149, 149, 149);
   color: white;
+}
+
+a {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.sidenav-toggler {
+  background-color: rgb(149, 149, 149);
+  z-index: 1000 !important;
+  position: absolute !important;
+  top: 200px;
+}
+mat-drawer-container {
+  top: 61px !important;
+}
+mat-drawer {
+  overflow: hidden;
+  max-width: 255px;
 }

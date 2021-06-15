@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from '../../services/user/user.service';
 
 @Component({
@@ -7,11 +8,29 @@ import { UserService } from '../../services/user/user.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  userInfo: any;
-  constructor(private userService: UserService) {}
+  userInfo$: any = {};
+  constructor(
+    private userService: UserService,
+    private _snackbar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
-    this.userInfo = this.userService.getUserDeatils();
-    console.log(this.userInfo);
+    this.userService.getUserDeatils().subscribe(
+      (userInfo) => {
+        this.userInfo$ = userInfo;
+        console.log(this.userInfo$);
+      },
+      (err) => {
+        this._snackbar.open(
+          'Failed to fetch user info because ' + err.message,
+          'OK',
+          {
+            duration: 3000,
+            horizontalPosition: 'left',
+          }
+        );
+        console.log(err);
+      }
+    );
   }
 }

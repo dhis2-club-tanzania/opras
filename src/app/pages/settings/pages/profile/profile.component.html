@@ -4,11 +4,23 @@
     <form>
       <mat-form-field>
         <mat-label>First Name</mat-label>
-        <input matInput placeholder="First Name" value="Appraisee" />
+        <input
+          matInput
+          placeholder="First Name"
+          [(ngModel)]="userInfo$.firstName"
+          [ngModelOptions]="{ standalone: true }"
+          disabled
+        />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Last Name" value="Name" />
+        <input
+          matInput
+          placeholder="Last Name"
+          [ngModel]="userInfo$.surname"
+          [ngModelOptions]="{ standalone: true }"
+          disabled
+        />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Email</mat-label>
@@ -16,23 +28,40 @@
           matInput
           type="email"
           placeholder="Email"
-          value="appraisee@email.com"
+          [ngModel]="userInfo$.email"
+          [ngModelOptions]="{ standalone: true }"
+          disabled
         />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Mobile Phone Number</mat-label>
-        <input type="tel" matInput placeholder="Mobile Phone Number" />
+        <input
+          type="tel"
+          matInput
+          placeholder="Mobile Phone Number"
+          [ngModel]="userInfo$.whatsApp"
+          [ngModelOptions]="{ standalone: true }"
+        />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Gender</mat-label>
-        <mat-select>
-          <mat-option value="male">Male</mat-option>
-          <mat-option value="female">Female</mat-option>
+        <mat-select
+          [ngModel]="userInfo$.gender"
+          [ngModelOptions]="{ standalone: true }"
+        >
+          <mat-option value="gender_male">Male</mat-option>
+          <mat-option value="gender_female">Female</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Date of Birth</mat-label>
-        <input matInput type="date" />
+        <input
+          matInput
+          type="date"
+          [ngModel]="userInfo$.birthday"
+          [ngModelOptions]="{ standalone: true }"
+          disabled
+        />
       </mat-form-field>
       <mat-form-field style="width: 20%; padding-right: 2%">
         <mat-label>Vote Code</mat-label>
