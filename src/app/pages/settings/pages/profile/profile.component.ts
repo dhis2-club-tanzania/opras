@@ -18,7 +18,6 @@ export class ProfileComponent implements OnInit {
     this.userService.getUserDeatils().subscribe(
       (userInfo) => {
         this.userInfo$ = userInfo;
-        console.log(this.userInfo$);
       },
       (err) => {
         this._snackbar.open(
@@ -29,7 +28,6 @@ export class ProfileComponent implements OnInit {
             horizontalPosition: 'left',
           }
         );
-        console.log(err);
       }
     );
   }

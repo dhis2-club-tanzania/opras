@@ -10,4 +10,7 @@ export class UserService {
   getUserDeatils(): Observable<any> {
     return this.http.get('me');
   }
+  getUserDashboard(): Observable<any> {
+    return this.http.get('me/dashboard');
+  }
 }

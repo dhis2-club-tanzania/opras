@@ -10,7 +10,6 @@
       <button
         class="btn btn-outline-primary my-2 my-sm-0 profile"
         mat-icon-button
-        (mouseover)="openMenu()"
         [matMenuTriggerFor]="menu"
         aria-label="Example icon-button with a menu"
       >
@@ -41,12 +40,35 @@
               background-position: center;
             "
           ></div>
-          <em>appraisee@email.com</em><br />
-          <span>Appraisee Name</span><br />
-          <button mat-button [routerLink]="['settings']" style="width: 100%">
-            My Profile</button
+          <em>{{ userInfo.email }}</em
           ><br />
-          <button mat-button style="width: 100%">Logout</button>
+          <span>{{ userInfo.displayName | titlecase }}</span>
+          <button
+            mat-menu-item
+            (click)="external('dhis-web-interpretation')"
+            target="_blank"
+          >
+            <mat-icon
+              [matBadge]="userDashboard.unreadInterpretations"
+              matBadgeColor="accent"
+              >chat </mat-icon
+            >Notification
+          </button>
+          <button
+            mat-menu-item
+            (click)="external('dhis-web-messaging')"
+            target="_blank"
+          >
+            <mat-icon
+              [matBadge]="userDashboard.unreadMessageConversations"
+              matBadgeColor="accent"
+              >email </mat-icon
+            >Messages
+          </button>
+          <button mat-menu-item routerLink="/settings">
+            <mat-icon>person </mat-icon>My Profile
+          </button>
+          <button mat-menu-item><mat-icon>logout </mat-icon>Logout</button>
         </div>
       </mat-menu>
     </nav>

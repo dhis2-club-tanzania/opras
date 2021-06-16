@@ -33,6 +33,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
 import { HomeComponent } from './home/home.component';
 
 // AoT requires an exported function for factories
@@ -97,6 +98,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatMenuModule,
     MatTreeModule,
     MatSidenavModule,
+    MatBadgeModule,
   ],
   providers: [{ provide: RouterStateSerializer, useClass: RouteSerializer }],
   bootstrap: [AppComponent],

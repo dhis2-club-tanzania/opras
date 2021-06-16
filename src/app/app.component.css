@@ -26,6 +26,9 @@ mat-menu {
   align-items: center;
   text-align: center;
 }
+mat-menu button {
+  width: 100%;
+}
 .navbar,
 .navbar-light,
 .bg-light {

@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Title } from '@angular/platform-browser';
 import { Fn } from '@iapps/function-analytics';
-import { MatDialog } from '@angular/material/dialog';
-
-import { MatMenuTrigger } from '@angular/material/menu';
+import { UserService } from './pages/settings/services/user/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import * as config from 'proxy-config.json';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +12,14 @@ import { MatMenuTrigger } from '@angular/material/menu';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
-
+  baseUrl = config['/api'].target;
+  userInfo: any = {};
+  userDashboard: any = {};
   constructor(
     private translate: TranslateService,
     private titleService: Title,
-    public dialog: MatDialog
+    private _userService: UserService,
+    private _snackbar: MatSnackBar
   ) {
     // this language will be used as a fallback when a translation isn't found in the current language
     this.translate.setDefaultLang('en');
@@ -34,12 +36,37 @@ export class AppComponent implements OnInit {
       });
     }
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._userService.getUserDeatils().subscribe(
+      (userInfo) => (this.userInfo = userInfo),
+      (err) =>
+        this._snackbar.open(
+          'Failed to fetch user info because ' + err.message,
+          'OK',
+          {
+            duration: 3000,
+            horizontalPosition: 'left',
+          }
+        )
+    );
+    this._userService.getUserDashboard().subscribe(
+      (userDashboard) => (this.userDashboard = userDashboard),
+      (err) =>
+        this._snackbar.open(
+          'Failed to fetch user dashboard info because ' + err.message,
+          'OK',
+          {
+            duration: 3000,
+            horizontalPosition: 'left',
+          }
+        )
+    );
+  }
 
   public setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);
   }
-  openMenu() {
-    this.trigger.openMenu();
+  public external(url: String): void {
+    window.open(this.baseUrl + '/' + url, 'blank');
   }
 }

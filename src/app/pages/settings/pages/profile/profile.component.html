@@ -30,7 +30,6 @@
           placeholder="Email"
           [ngModel]="userInfo$.email"
           [ngModelOptions]="{ standalone: true }"
-          disabled
         />
       </mat-form-field>
       <mat-form-field>
@@ -58,7 +57,7 @@
         <input
           matInput
           type="date"
-          [ngModel]="userInfo$.birthday"
+          [ngModel]="userInfo$.birthday | date: 'yyyy-MM-dd'"
           [ngModelOptions]="{ standalone: true }"
           disabled
         />
